@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Jon Imanol Ruiz Hermoso, Alejandro Rodriguez Alvarez"/>
+    <meta name="copyright" content="DWEC"/>
+    <meta name="keywords" content="Juego, Juegos, Juegos JS"/>
+    <meta name="description" content="Recreacion de Purble Place"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Purble Place</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+</head>
+<body>
+    
+    <header class="row">
+        <div class="col d-flex justify-content-between align-items-center p-3">
+            <span class="d-flex align-items-center">
+                <img src="img/logo.png" alt="Logotipo Purble Place" class="img-fluid">
+                <h1 class="text-white">Purble Place</h1>
+            </span>
+            <p class="h1 text-white"> Puntuaci&oacute;n: <span id="score">000</span></p>
+        </div>
+    </header>
+
+    <main class="d-flex align-items-center justify-content-center">
+        <section class="row">
+            <article class="col">
+                <div class="pantalla">
+                    <div id="formas">
+                        <button>
+                            <div class="forma circulo"></div>
+                        </button>
+                        <button>
+                            <div class="forma triangulo"></div>
+                        </button>
+                        <button>
+                            <div class="forma cuadrado"></div>
+                        </button>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="bg-danger">
+        <p class="text-white text-center">&copy;2024 Purble Place; Jon y Alejandro</p>
+    </footer>
+
+
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
