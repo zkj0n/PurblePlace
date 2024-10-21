@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
   overflow: hidden;
 }
@@ -10,34 +13,44 @@ header div{
     background-color: rgb(64, 0, 0);
     height: 15vh;
 }
-.pantalla{
+#pantalla{
     width: 130vh;
     height: 80VH;
     background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    padding: 10px;
 }
-.circulo{
+.forma, .base{
     width: 50px;
     height: 50px;
+}
+.base{
+    border-radius: 20px;
+}
+.circulo{
+
     border-radius: 100%;
     border: 2px solid #000;
     background-color: #ccc;
-
 }
 .cuadrado{
-    width: 50px;
-    height: 50px;
+
     border: 2px solid #000;
     background-color: #ccc;
-
 }
 .triangulo{
-    width: 50px;
-    height: 50px;
+
     border-left: 25px solid transparent !important;
     border-right: 25px solid transparent !important;
     border-bottom: 50px solid #ccc !important;
 }
+#formas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
 
+}
 #formas button {
     padding: 5px;
     display: flex;
@@ -46,4 +59,15 @@ header div{
     border: 1px solid #5a007b;
     border-radius: 10px;
     background-color: #e396ff;
+    width: 60px;
+    height: 60px;
+}
+.rojo{
+    background-color: red;
+}
+.amarillo{
+    background-color: yellow;
+}
+.azul{
+    background-color: blue;
 }
