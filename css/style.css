@@ -21,8 +21,8 @@ header div{
     padding: 10px;
 }
 .forma, .base{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 .base{
     border-radius: 20px;
@@ -38,19 +38,19 @@ header div{
     border: 2px solid #000;
     background-color: #ccc;
 }
-.triangulo{
-
-    border-left: 25px solid transparent !important;
-    border-right: 25px solid transparent !important;
-    border-bottom: 50px solid #ccc !important;
+.rectangulo{
+    border: 2px solid #000;
+    background-color: #ccc;
+    height: 70px;
 }
+
 #formas{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 30px;
-
 }
+
 #formas button {
     padding: 5px;
     display: flex;
@@ -59,17 +59,18 @@ header div{
     border: 1px solid #5a007b;
     border-radius: 10px;
     background-color: #e396ff;
-    width: 60px;
-    height: 60px;
+    margin-left: 10px;
+    width: 150px;
+    height: 150px;
 }
 .rojo{
-    background-color: red;
+    background-color: #f00;
 }
 .amarillo{
-    background-color: yellow;
+    background-color: #ff0;
 }
 .azul{
-    background-color: blue;
+    background-color: #00f;
 }
 
 i{
@@ -96,11 +97,13 @@ i{
 }
 
 #hacer{
-    align-self: self-end;
+    align-self: end;
 }
 
 #flechas{
-
+    display: flex;
+    flex-direction: row;
+    
 }
 
 #flecha-izq, #flecha-der{
@@ -108,6 +111,7 @@ i{
     height: 50px;
 
 }
+
 
 #resultado *{
     width: 10rem;
@@ -119,4 +123,9 @@ i{
 
 #resultado * i{
     font-size: 4rem;
+}
+
+.fps{
+    min-width: 5rem;
+    font-size: 1.3em;
 }
