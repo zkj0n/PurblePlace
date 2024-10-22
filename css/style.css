@@ -111,12 +111,19 @@ i{
     height: 50px;
 
 }
+#resultado{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 #resultado .cuadrado, #resultado .circulo{
     width: 10rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 #resultado .rectangulo{
     width: 10rem;
