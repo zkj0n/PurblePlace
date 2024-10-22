@@ -88,6 +88,14 @@ i{
     background-color: #e396ff;
 }
 
+#resultado{
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #hacer{
     align-self: end;
 }
@@ -103,6 +111,20 @@ i{
     height: 50px;
 
 }
+
+
+#resultado *{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultado * i{
+    font-size: 4rem;
+}
+
 .fps{
     min-width: 5rem;
     font-size: 1.3em;
