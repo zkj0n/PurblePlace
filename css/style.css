@@ -111,11 +111,16 @@ i{
     height: 50px;
 
 }
-
-
-#resultado *{
+#resultado .cuadrado, #resultado .circulo{
     width: 10rem;
     height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#resultado .rectangulo{
+    width: 10rem;
+    height: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
