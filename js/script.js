@@ -141,7 +141,94 @@ getFPS(function (fps) {
     document.getElementById("fps").innerHTML = `FPS: ${fps}`;
 });
 
+//Generar Forma
+let circulo= document.getElementById("circulo");
+let rectangulo= document.getElementById("rectangulo");
+let cuadrado= document.getElementById("cuadrado");
+circulo.addEventListener('click',genFormaCirculo);
+rectangulo.addEventListener('click',genFormaRectangulo);
+cuadrado.addEventListener('click',genFormaCuadrado);
 
+//Generar forma del circulo
+function genFormaCirculo() {
+    let newCircle= document.getElementById("newForma");
+    newCircle.classList.remove("cuadrado","rectangulo");
+    newCircle.classList.add("forma","circulo");
+    
+}
+
+//Generar forma del circulo
+function genFormaRectangulo() {
+    let newRectangulo= document.getElementById("newForma");
+    newRectangulo.classList.remove("cuadrado","circulo");
+    newRectangulo.classList.add("forma","rectangulo");
+}
+
+//Generar forma del cuadrado
+function genFormaCuadrado() {
+    let newCuadrado= document.getElementById("newForma");
+    newCuadrado.classList.remove("rectangulo","circulo");
+    newCuadrado.classList.add("forma","cuadrado");
+}
+
+//Generar Base
+let rojo= document.getElementById("rojo");
+let amarillo= document.getElementById("amarillo");
+let azul= document.getElementById("azul");
+rojo.addEventListener('click',genBaseRojo);
+amarillo.addEventListener('click',genBaseAmarillo);
+azul.addEventListener('click',genBaseAzul);
+
+//Generar base roja
+function genBaseRojo() {
+    let newRojo= document.getElementById("newForma");
+    newRojo.classList.remove("amarillo","azul");
+    newRojo.classList.add("rojo");
+}
+
+//Generar base amarilla
+function genBaseAmarillo() {
+    let newAmarillo= document.getElementById("newForma");
+    newAmarillo.classList.remove("azul","rojo");
+    newAmarillo.classList.add("amarillo");
+}
+
+//Generar base azul
+function genBaseAzul() {
+    let newAzul= document.getElementById("newForma");
+    newAzul.classList.remove("rojo","amarillo");
+    newAzul.classList.add("azul");
+}
+
+
+//Generar Icono
+let smile= document.getElementById("smile");
+let spoon= document.getElementById("spoon");
+let yin_yang= document.getElementById("yin-yang");
+smile.addEventListener('click',genIconoSmile);
+spoon.addEventListener('click',genIconoSpoon);
+yin_yang.addEventListener('click',genIconoYinYang);
+
+//Generar icono Smile
+function genIconoSmile() {
+    let iconSmile= document.getElementById("icono");
+    iconSmile.classList.remove("fas", "fa-utensil-spoon","fa-yin-yang");
+    iconSmile.classList.add("far","fa-smile");
+}
+
+//Generar icono Spoon
+function genIconoSpoon() {
+    let iconSmile= document.getElementById("icono");
+    iconSmile.classList.remove("fas","far" ,"fa-smile","fa-yin-yang");
+    iconSmile.classList.add("fas","fa-utensil-spoon");
+}
+
+//Generar icono Yin-yang
+function genIconoYinYang() {
+    let iconSmile= document.getElementById("icono");
+    iconSmile.classList.remove("fas","far" ,"fa-smile","fa-utensil-spoon");
+    iconSmile.classList.add("fas","fa-yin-yang");
+}
 
 function setScore() {
     let objetivoForma= document.querySelector("#resultado div").classList;
