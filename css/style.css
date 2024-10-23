@@ -141,3 +141,8 @@ i{
     min-width: 5rem;
     font-size: 1.3em;
 }
+#newForma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

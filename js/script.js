@@ -8,7 +8,7 @@ function nuevaFigura() {
     let figura = document.createElement('div');
     let resultado = document.getElementById('resultado');
     let icon = document.createElement('i');
-    figura.classList.add(formaRan(), "forma", baseRan());
+    figura.classList.add("forma",formaRan(), baseRan());
     let iconClass = iconRan();
     icon.classList.add(iconClass[0], iconClass[1]);
     figura.appendChild(icon);
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const flechaDer = document.getElementById('flecha-der');
 
     let i = 0;
-
+   
     function mostrarContenedor(index) {
         formasContainers.forEach((container, i) => {
             if (i === index) {
@@ -113,6 +113,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     mostrarContenedor(i);
+
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            setScore();
+        }
+    });
 });
 
 function getFPS(callback) {
@@ -231,18 +238,21 @@ function genIconoYinYang() {
 }
 
 function setScore() {
-    let objetivoForma= document.querySelector("#resultado div").classList;
-    let objetivoIcon= document.querySelector("#resultado i").classList;
+    let objetivoForma= document.querySelector("#resultado div").classList.value;
+    let objetivoIcon= document.querySelector("#resultado i").classList.value;
     console.log(objetivoForma);
     console.log(objetivoIcon);
     
-    let hacerForma= document.querySelector("#hacer div").classList;
-    let hacerIcon= document.querySelector("#hacer i").classList;
+    let hacerForma= document.querySelector("#hacer div").classList.value;
+    let hacerIcon= document.querySelector("#hacer i").classList.value;
     
     let puntuacion = document.querySelector("#score");
     let nuevaPuntuacion = Number(puntuacion.textContent);
+    console.log(objetivoForma + "---"+ objetivoIcon);
+    console.log(hacerForma + "---"+ hacerIcon);
 
-    if(hacerForma===objetivoForma && hacerIcon===objetivoIcon){
+
+    if(hacerForma==objetivoForma && hacerIcon==objetivoIcon){
         nuevaPuntuacion+=100;
     } else{
         nuevaPuntuacion-=10;
