@@ -33,9 +33,19 @@
     <main class="d-flex align-items-center justify-content-center">
         <section class="row">
             <article class="col">
-                <div id="pantalla" class="d-flex justify-content-between">
-                    
-                    
+                <div id="pantalla" class="d-flex justify-content-between position-relative">
+                    <div id="instrucciones" class="position-absolute">
+                        <h3 class="text-center">Instrucciones</h3>
+                        <ul>
+                            <li>Paso 1: Selecciona una forma.</li>
+                            <li>Paso 2: Escoge un color de base.</li>
+                            <li>Paso 3: Agrega un ícono si lo deseas.</li>
+                            <li>Paso 4: Arrastra las opciones al área de creación.</li>
+                            <li>Paso 5: Comprueba que la forma coincida con el objetivo.</li>
+                            <li>Paso 6: Pulsa Enter para confirmar tu creación.</li>
+                        </ul>
+                    </div>
+                
                     <div class="botones">
                         <div id="formas">
                             <p class="h1 text-white">Forma</p>
@@ -51,7 +61,7 @@
                                 </button>
                             </div>
                         </div>
-    
+                        
                         <div id="formas" class="d-none">
                             <p class="h1 text-white">Base</p>
                             <div class="d-flex flex-row">
@@ -66,7 +76,7 @@
                                 </button>
                             </div>
                         </div>
-    
+                        
                         <div id="formas" class="d-none">
                             <p class="h1 text-white">Icono</p>
                             <div class="d-flex flex-row">
@@ -88,7 +98,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="flechas">
+                    
+                    <div id="flechas" class="position-absolute">
                         <button id="flecha-izq" class="rounded-5 bg-success">
                             <i class="fas fa-arrow-left"></i>
                         </button>
@@ -96,6 +107,7 @@
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
+                    
                     <div class="row d-flex flex-column justify-content-between">
                         <div class="col-5">
                             <div id="resultado">
@@ -106,17 +118,20 @@
                             <div id="hacer" class="d-flex flex-column align-items-center justify-content-between">
                                 <h1>Creación</h1>
                                 <div id="newForma" class="">
-                                    
                                     <i id="icono"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    
-                    
-
+                
+                    <!-- Texto centrado en el contenedor -->
+                    <div class="text-center position-absolute enter">
+                        <h2 class="blink">Pulsa Enter para confirmar</h2>
+                    </div>
+                
                 </div>
+                
+                
             </article>
             <article class="col">
                 <div class="text-white fps text-center" id="fps"></div>
