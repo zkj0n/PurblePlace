@@ -1,5 +1,5 @@
 let pantalla = document.getElementById("pantalla");
-let formas = document.querySelectorAll(".forma");
+let formas = document.querySelectorAll("#forma");
 let bases = document.querySelectorAll(".base");
 
 //Resultado
@@ -7,6 +7,7 @@ let bases = document.querySelectorAll(".base");
 function nuevaFigura() {
     let figura = document.createElement('div');
     let resultado = document.getElementById('resultado');
+    resultado.innerHTML="<h1>Objetivo</h1>";
     let icon = document.createElement('i');
     figura.classList.add("forma",formaRan(), baseRan());
     let iconClass = iconRan();
@@ -118,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             setScore();
+            nuevaFigura();
         }
     });
 });
@@ -239,12 +241,12 @@ function genIconoYinYang() {
 
 function setScore() {
     let objetivoForma= document.querySelector("#resultado div").classList.value;
-    let objetivoIcon= document.querySelector("#resultado i").classList.value;
+    let objetivoIcon= document.querySelector("#resultado div i").classList.value;
     console.log(objetivoForma);
     console.log(objetivoIcon);
     
     let hacerForma= document.querySelector("#hacer div").classList.value;
-    let hacerIcon= document.querySelector("#hacer i").classList.value;
+    let hacerIcon= document.querySelector("#hacer div i").classList.value;
     
     let puntuacion = document.querySelector("#score");
     let nuevaPuntuacion = Number(puntuacion.textContent);
@@ -259,3 +261,47 @@ function setScore() {
     }
     puntuacion.textContent = nuevaPuntuacion;
 }
+
+// Añadir el evento 'dragstart' a cada uno de los elementos
+formas.forEach(forma => {
+    forma.addEventListener('dragstart', (event) => {
+        console.log("aa");
+        // Obtener la segunda clase del elemento arrastrado
+        let claseForma = event.target.classList[1]; 
+        // Pasar la clase al evento dataTransfer para que esté disponible en el drop
+        event.dataTransfer.setData('text/plain', claseForma);
+    });
+});
+
+// Obtener el elemento newForma
+let newForma = document.getElementById("newForma");
+
+// Evento 'dragover' en el elemento donde se va a hacer el drop
+newForma.addEventListener('dragover', (event) => {
+    // Prevenir el comportamiento predeterminado
+    event.preventDefault();
+});
+
+// Evento 'drop' en el elemento donde se va a soltar
+newForma.addEventListener('drop', (event) => {
+    // Prevenir el comportamiento predeterminado
+    event.preventDefault();
+
+    // Limpiar el contenido de newForma (si es necesario)
+    newForma.innerHTML = "";
+
+    // Obtener la clase del elemento arrastrado desde el dataTransfer
+    let className = event.dataTransfer.getData("text/plain");
+
+    // Limpiar las clases anteriores de newForma
+    newForma.className = "";  // Elimina cualquier clase existente
+
+    // Verificar que className no esté vacío antes de añadirlo
+    if (className) {
+        newForma.classList.add(className); // Añadir la clase solo si no está vacía
+    } else {
+        console.error("No se pudo agregar una clase vacía");
+    }
+});
+
+

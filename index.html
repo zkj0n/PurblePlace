@@ -40,13 +40,13 @@
                         <div id="formas">
                             <p class="h1 text-white">Forma</p>
                             <div class="d-flex flex-row">
-                                <button id="circulo">
+                                <button id="circulo" draggable="true">
                                     <div class="forma circulo"></div>
                                 </button>
-                                <button id="rectangulo">
+                                <button id="rectangulo" draggable="true">
                                     <div class="forma rectangulo"></div>
                                 </button>
-                                <button id="cuadrado">
+                                <button id="cuadrado" draggable="true">
                                     <div class="forma cuadrado"></div>
                                 </button>
                             </div>
@@ -55,13 +55,13 @@
                         <div id="formas" class="d-none">
                             <p class="h1 text-white">Base</p>
                             <div class="d-flex flex-row">
-                                <button id="rojo">
+                                <button id="rojo" draggable="true">
                                     <div class="base rojo"></div>
                                 </button>
-                                <button id="amarillo">
+                                <button id="amarillo" draggable="true">
                                     <div class="base amarillo"></div>
                                 </button>
-                                <button id="azul">
+                                <button id="azul" draggable="true">
                                     <div class="base azul"></div>
                                 </button>
                             </div>
@@ -70,18 +70,18 @@
                         <div id="formas" class="d-none">
                             <p class="h1 text-white">Icono</p>
                             <div class="d-flex flex-row">
-                                <button id="smile">
+                                <button id="smile" draggable="true">
                                     <div class="iconos">
                                         <i class="far fa-smile"></i>
                                     </div>
                                 </button>
                                 <button id="spoon">
-                                    <div class="iconos">
+                                    <div class="iconos" draggable="true">
                                         <i class="fas fa-utensil-spoon"></i>
                                     </div>
                                 </button>
                                 <button id="yin-yang">
-                                    <div class="iconos">
+                                    <div class="iconos" draggable="true">
                                         <i class="fas fa-yin-yang"></i>
                                     </div>
                                 </button>
@@ -96,14 +96,25 @@
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
-                    <div id="hacer" class="d-flex align-items-center justify-content-center">
-                        <div id="newForma" class="">
-                            <i id="icono"></i>
+                    <div class="row d-flex flex-column justify-content-between">
+                        <div class="col-5">
+                            <div id="resultado">
+                                <h1>Objetivo</h1>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div id="hacer" class="d-flex flex-column align-items-center justify-content-between">
+                                <h1>Creación</h1>
+                                <div id="newForma" class="">
+                                    
+                                    <i id="icono"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="resultado">
-                        <h1>Objetivo</h1>
-                    </div>
+
+                    
+                    
 
                 </div>
             </article>

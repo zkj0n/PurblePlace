@@ -83,22 +83,14 @@ i{
 }
 
 #resultado, #hacer{
-    width: 150px;
-    height: 150px;
+    height: 15rem;
+    width: 15rem;
     background-color: #e396ff;
+    padding: 1rem;
 }
 
-#resultado{
-    height: 20rem;
-    width: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-#hacer{
-    align-self: end;
-}
+
 
 #flechas{
     display: flex;
@@ -114,10 +106,11 @@ i{
 #resultado{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
-#resultado .cuadrado, #resultado .circulo{
+
+#resultado .cuadrado, #resultado .circulo, #hacer .cuadrado, #hacer .circulo{
     width: 10rem;
     height: 10rem;
     display: flex;
@@ -125,7 +118,7 @@ i{
     align-items: center;
 
 }
-#resultado .rectangulo{
+#resultado .rectangulo, #hacer .rectangulo{
     width: 10rem;
     height: 8rem;
     display: flex;
@@ -133,7 +126,7 @@ i{
     align-items: center;
 }
 
-#resultado * i{
+#resultado * i,#hacer * i{
     font-size: 4rem;
 }
 
@@ -145,4 +138,6 @@ i{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
