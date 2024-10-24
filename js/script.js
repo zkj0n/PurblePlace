@@ -262,46 +262,80 @@ function setScore() {
     puntuacion.textContent = nuevaPuntuacion;
 }
 
-// Añadir el evento 'dragstart' a cada uno de los elementos
-formas.forEach(forma => {
-    forma.addEventListener('dragstart', (event) => {
-        console.log("aa");
-        // Obtener la segunda clase del elemento arrastrado
-        let claseForma = event.target.classList[1]; 
-        // Pasar la clase al evento dataTransfer para que esté disponible en el drop
-        event.dataTransfer.setData('text/plain', claseForma);
-    });
+circulo.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', 'circulo');
+});
+rectangulo.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', 'rectangulo');
+});
+cuadrado.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', 'cuadrado');
 });
 
-// Obtener el elemento newForma
 let newForma = document.getElementById("newForma");
 
-// Evento 'dragover' en el elemento donde se va a hacer el drop
 newForma.addEventListener('dragover', (event) => {
-    // Prevenir el comportamiento predeterminado
     event.preventDefault();
 });
 
-// Evento 'drop' en el elemento donde se va a soltar
 newForma.addEventListener('drop', (event) => {
-    // Prevenir el comportamiento predeterminado
     event.preventDefault();
 
-    // Limpiar el contenido de newForma (si es necesario)
-    newForma.innerHTML = "";
+    let item = event.dataTransfer.getData('text/plain');
 
-    // Obtener la clase del elemento arrastrado desde el dataTransfer
-    let className = event.dataTransfer.getData("text/plain");
-
-    // Limpiar las clases anteriores de newForma
-    newForma.className = "";  // Elimina cualquier clase existente
-
-    // Verificar que className no esté vacío antes de añadirlo
-    if (className) {
-        newForma.classList.add(className); // Añadir la clase solo si no está vacía
-    } else {
-        console.error("No se pudo agregar una clase vacía");
+    if (item === 'circulo' || item === 'rectangulo' || item === 'cuadrado') {
+        newForma.classList.remove("forma");
+        newForma.classList.add("forma");
+        newForma.classList.remove("circulo", "rectangulo", "cuadrado");
+        newForma.classList.add(item);
+    } else if (item === 'rojo' || item === 'amarillo' || item === 'azul') {
+        newForma.classList.remove("rojo", "amarillo", "azul");
+        newForma.classList.add(item);
     }
+});
+
+rojo.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', 'rojo');
+});
+amarillo.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', 'amarillo');
+});
+azul.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text/plain', 'azul');
+});
+
+let iconElement = document.getElementById("icono");
+
+smile.addEventListener('dragstart', (event) => {
+    console.log("Arrastrando smile");
+    event.dataTransfer.setData('text/plain', 'smile');
+});
+spoon.addEventListener('dragstart', (event) => {
+    console.log("Arrastrando spoon");
+    event.dataTransfer.setData('text/plain', 'spoon');
+});
+yin_yang.addEventListener('dragstart', (event) => {
+    console.log("Arrastrando yin-yang");
+    event.dataTransfer.setData('text/plain', 'yin-yang');
+});
+
+
+newForma.addEventListener('drop', (event) => {
+    event.preventDefault();
+
+    let icon = event.dataTransfer.getData('text/plain');
+
+    iconElement.className = ""; 
+
+    if (icon === 'smile') {
+        iconElement.classList.add("far", "fa-smile");
+    } else if (icon === 'spoon') {
+        iconElement.classList.add("fas", "fa-utensil-spoon");
+    } else if (icon === 'yin-yang') {
+        iconElement.classList.add("fas", "fa-yin-yang");
+    }
+
+    console.log('Clases del icono después del drop:', iconElement.className);
 });
 
 
