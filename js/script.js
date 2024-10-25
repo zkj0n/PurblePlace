@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function getFPS(callback) {
+function getFPS(salida) {
     let framesAnterior = performance.now();
     let numeroFrames = 0;
     let fps = 0;
@@ -139,7 +139,7 @@ function getFPS(callback) {
             fps = numeroFrames;
             numeroFrames = 0;
             framesAnterior = framesActuales;
-            callback(fps);
+            salida(fps);
         }
 
         requestAnimationFrame(cambiarFPS);
