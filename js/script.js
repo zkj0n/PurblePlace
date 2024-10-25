@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === 'ArrowRight') {
             i = (i + 1) % formasContainers.length;
             mostrarContenedor(i);
-            setScore();
+
         }
     });
 
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     document.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
+        if (event.key === 'a' || event.key === 'A') {
             setScore();
             nuevaFigura();
             document.getElementById('newForma').className="";
