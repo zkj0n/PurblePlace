@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === 'Enter') {
             setScore();
             nuevaFigura();
+            document.getElementById('newForma').className="";
+            document.getElementById("icono").className="";
         }
     });
 });
